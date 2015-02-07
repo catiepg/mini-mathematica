@@ -21,8 +21,12 @@ public class Console {
 	    return null;
     }
 	
-    public void writeLine(String output){
+    public void writeResult(String output){
 	System.out.println("Result: " + output);
+    }
+    
+    public void writeLine(String output) {
+        System.out.println(output);
     }
 
     private BufferedReader bufferedReader() {

@@ -12,6 +12,7 @@ public class Run {
     public static void main(String[] args) throws IOException {
         
         Console console = new Console();
+        console.writeLine("Type 'exit' to exit");
         while(true) {
             String input = console.readLine();
             if (input.equals("exit")) {
@@ -20,9 +21,7 @@ public class Run {
             ShuntingYardParser parser = new ShuntingYardParser(input);
             List<Token> list = parser.parse();
             RPNParser rpn = new RPNParser(list);
-            console.writeLine(String.valueOf(rpn.calculate()));
+            console.writeResult(String.valueOf(rpn.calculate()));
         }
-//        "5 + sin(pi) / pow(2, 10) - log(e, pow(e, sqrt(4)))"
-    }
-    
+    }   
 }
