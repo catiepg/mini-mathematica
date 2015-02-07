@@ -44,7 +44,7 @@ public class ShuntingYardParser {
             } else if(token.equals("-")) {
                 if((operations.containsOperation(prevToken) && !")".equals(prevToken)) || prevToken == null) {
                     Operation operation = operations.getOperation(Notation.MINUS_U);
-                    while(!operationStack.empty() && !(operationStack.peek().getArgCount() == 1)) {
+                    while(!operationStack.empty() && !(operationStack.peek().getArgCount() <= 1)) {
                         output.add(operationStack.pop());
                     }
                     operationStack.push(operation);
